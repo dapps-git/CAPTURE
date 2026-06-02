@@ -202,8 +202,8 @@ export default function Home() {
       {/* ══════════════════ HEADER ══════════════════ */}
       <header
         className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ${scrolled
-            ? "bg-[#001229]/95 backdrop-blur-md shadow-2xl border-b border-[#c5a880]/20"
-            : "bg-transparent"
+          ? "bg-[#001229]/95 backdrop-blur-md shadow-2xl border-b border-[#c5a880]/20"
+          : "bg-transparent"
           }`}
       >        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
@@ -213,9 +213,7 @@ export default function Home() {
               <Compass className="w-6 h-6 text-[#001229] stroke-[2.5]" />
             </div>
             <div>
-              <span className="text-md tracking-tight text-white group-hover:text-[#c5a880] transition-colors">
-                CAPTURE SURVEY
-              </span>
+
 
             </div>
           </a>
@@ -321,7 +319,7 @@ export default function Home() {
       {/* ══════════════════ HERO ══════════════════ */}
       <section
         id="home"
-        className="relative flex items-center min-h-screen overflow-hidden py-32"
+        className="relative flex items-center min-h-screen overflow-hidden py-50"
       >
         {/* Full background image.webp - highly visible and bright */}
         <div className="absolute inset-0 z-0">
@@ -345,11 +343,10 @@ export default function Home() {
           <div className="max-w-3xl flex flex-col justify-center">
 
             {/* Small tag badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#c5a880]/20 border border-[#c5a880]/35 text-[#c5a880] text-xs font-semibold tracking-wider uppercase mb-6 w-fit backdrop-blur-sm">
-              <Compass className="w-3.5 h-3.5 text-[#c5a880] stroke-[2]" />
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-[#c5a880]/20 border border-[#c5a880]/35 text-[#c5a880] text-[10px] sm:text-xs font-semibold tracking-wide sm:tracking-wider uppercase mb-4 sm:mb-6 w-fit">
+              <Compass className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#c5a880] stroke-[2]" />
               Precision Land Measuring
             </div>
-
             {/* Headings using Montserrat weights */}
             <h1 className="text-xl sm:text-2xl lg:text-4xl font-semibold text-white tracking-tight leading-[1.12] mb-6">
               Professional Land <br />
@@ -358,9 +355,7 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="text-slate-200 text-sm md:text-base font-light mb-3 tracking-wide">
-              Accurate &bull; Reliable &bull; Modern Survey Solutions
-            </p>
+
             <p className="text-slate-300 text-sm md:text-base mb-8 leading-relaxed font-light">
               Equipped with precision Dual-Frequency DGPS receivers and advanced digital surveying technology. We map contours, layouts, infrastructures, and FMB boundary markers with<br></br> flawless geodetic accuracy across Kerala.
             </p>
