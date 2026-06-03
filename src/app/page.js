@@ -175,11 +175,11 @@ export default function Home() {
   ];
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#001d3d]">
+    <div className="relative min-h-screen overflow-x-hidden bg-[#FAF8F2]">
 
       {/* ── Background ambient glows ── */}
-      <div className="fixed top-[-15%] left-[-10%] w-[55vw] h-[55vw] rounded-full bg-[#003566]/30 blur-[130px] pointer-events-none -z-10" />
-      <div className="fixed bottom-[10%] right-[-12%] w-[45vw] h-[45vw] rounded-full bg-[#001229]/60 blur-[120px] pointer-events-none -z-10" />
+      <div className="fixed top-[-15%] left-[-10%] w-[55vw] h-[55vw] rounded-full bg-[#c5a880]/20 blur-[130px] pointer-events-none -z-10" />
+      <div className="fixed bottom-[10%] right-[-12%] w-[45vw] h-[45vw] rounded-full bg-[#202B39]/10 blur-[120px] pointer-events-none -z-10" />
 
       {/* ── Floating WhatsApp Widget ── */}
       <div className="fixed bottom-6 right-6 z-50">
@@ -190,7 +190,7 @@ export default function Home() {
           className="flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full shadow-lg shadow-[#25D366]/40 transition-all duration-300 hover:scale-110 active:scale-95 group relative"
           aria-label="Contact on WhatsApp"
         >
-          <span className="absolute right-16 bg-[#001229] text-white text-xs font-semibold py-1.5 px-3 rounded-lg border border-[#003566] shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
+          <span className="absolute right-16 bg-[#202B39] text-white text-xs font-semibold py-1.5 px-3 rounded-lg border border-[#c5a880]/30 shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
             Chat on WhatsApp
           </span>
           <svg className="w-7 h-7 fill-current" viewBox="0 0 24 24">
@@ -202,15 +202,15 @@ export default function Home() {
       {/* ══════════════════ HEADER ══════════════════ */}
       <header
         className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ${scrolled
-          ? "bg-[#001229]/95 backdrop-blur-md shadow-2xl border-b border-[#c5a880]/20"
-          : "bg-transparent"
+          ? "bg-[#202B39]/95 backdrop-blur-md shadow-2xl border-b border-[#c5a880]/25"
+          : "bg-transparent backdrop-blur-md border-b border-white/5"
           }`}
       >        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-tr from-[#8c6d4f] to-[#c5a880] flex items-center justify-center shadow-lg shadow-[#8c6d4f]/30">
-              <Compass className="w-6 h-6 text-[#001229] stroke-[2.5]" />
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-tr from-[#8c6d4f] to-[#c5a880] flex items-center justify-center shadow-lg shadow-[#c5a880]/30">
+              <Compass className="w-6 h-6 text-[#202B39] stroke-[2.5]" />
             </div>
             <div>
 
@@ -226,7 +226,7 @@ export default function Home() {
                 href={`#${section}`}
                 className={`text-sm font-medium tracking-wide capitalize transition-all duration-200 relative py-1 ${activeSection === section
                   ? "text-[#c5a880] font-semibold"
-                  : "text-slate-300 hover:text-white"
+                  : "text-slate-200 hover:text-white"
                   }`}
               >
                 {section === "contact" ? "Contact Us" : section}
@@ -246,14 +246,14 @@ export default function Home() {
                   +91 96333 56603
                 </a>
               </div>
-              <a href="tel:+918606401674" className="text-slate-400 font-mono text-xs hover:text-white transition-colors">
+              <a href="tel:+918606401674" className="text-slate-300 font-mono text-xs hover:text-white transition-colors">
                 +91 86064 01674
               </a>
             </div>
 
             <button
               onClick={() => setQuoteModalOpen(true)}
-              className="bg-gradient-to-r from-[#8c6d4f] to-[#c5a880] hover:from-[#a18262] hover:to-[#d4b996] text-[#001229] font-bold px-6 py-2.5 rounded-lg text-sm transition-all duration-300 hover:scale-105 shadow-lg shadow-[#8c6d4f]/25"
+              className="bg-gradient-to-r from-[#8c6d4f] to-[#c5a880] hover:from-[#c5a880] hover:to-[#edd9bd] text-[#202B39] font-bold px-6 py-2.5 rounded-lg text-sm transition-all duration-300 hover:scale-105 shadow-lg shadow-[#c5a880]/30"
             >
               Get Free Quote
             </button>
@@ -271,16 +271,16 @@ export default function Home() {
 
         {/* Mobile Dropdown — solid background to prevent hero bleed-through */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-[#000c1a] border-t border-[#c5a880]/20 px-6 py-8 flex flex-col gap-6 animate-fade-in shadow-2xl">
+          <div className="md:hidden bg-[#202B39] border-t border-[#c5a880]/25 px-6 py-8 flex flex-col gap-6 animate-fade-in shadow-2xl">
             <div className="flex flex-col gap-4">
               {NAV_LINKS.map((section) => (
                 <a
                   key={section}
                   href={`#${section}`}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-base font-medium capitalize py-2 border-b border-[#003566]/50 last:border-0 transition-colors ${activeSection === section
+                  className={`text-base font-medium capitalize py-2 border-b border-[#c5a880]/20 last:border-0 transition-colors ${activeSection === section
                     ? "text-[#c5a880] font-semibold"
-                    : "text-slate-300 hover:text-white"
+                    : "text-slate-200 hover:text-white"
                     }`}
                 >
                   {section === "contact" ? "Contact Us" : section}
@@ -293,14 +293,14 @@ export default function Home() {
                 href="tel:+919633356603"
                 className="flex items-center gap-3 text-[#c5a880] font-semibold text-base"
               >
-                <div className="w-8 h-8 rounded-lg bg-[#c5a880]/10 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-[#c5a880]/15 flex items-center justify-center">
                   <Phone className="w-4 h-4" />
                 </div>
                 +91 96333 56603
               </a>
               <a
                 href="tel:+918606401674"
-                className="flex items-center gap-3 text-slate-400 text-sm ml-11 hover:text-white transition-colors"
+                className="flex items-center gap-3 text-slate-300 text-sm ml-11 hover:text-white transition-colors"
               >
                 +91 86064 01674
               </a>
@@ -308,7 +308,7 @@ export default function Home() {
 
             <button
               onClick={() => { setMobileMenuOpen(false); setQuoteModalOpen(true); }}
-              className="w-full bg-gradient-to-r from-[#8c6d4f] to-[#c5a880] text-[#001229] font-bold py-3 rounded-xl text-center text-sm hover:from-[#a18262] hover:to-[#d4b996] transition-all"
+              className="w-full bg-gradient-to-r from-[#8c6d4f] to-[#c5a880] text-[#202B39] font-bold py-3 rounded-xl text-center text-sm hover:from-[#c5a880] hover:to-[#edd9bd] transition-all"
             >
               Get Free Quote
             </button>
@@ -318,8 +318,7 @@ export default function Home() {
 
       {/* ══════════════════ HERO ══════════════════ */}
       <section
-        id="home"
-        className="relative flex items-center min-h-screen overflow-hidden py-50"
+        id="home" className="relative flex items-center min-h-screen overflow-hidden py-50 border-b border-[#8c6d4f]/20"
       >
         {/* Full background image.webp - highly visible and bright */}
         <div className="absolute inset-0 z-0">
@@ -336,21 +335,21 @@ export default function Home() {
             style={{ backgroundImage: "radial-gradient(#c5a880 1px, transparent 1px)", backgroundSize: "24px 24px" }}
           />
           {/* Clean and natural dark gradient tint optimized for text readability on both mobile (vertical) and desktop (horizontal) */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/30 md:bg-gradient-to-r md:from-black/85 md:via-black/60 md:to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/65 to-black/40 md:bg-gradient-to-r md:from-black/88 md:via-black/65 md:to-black/35" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
           <div className="max-w-3xl flex flex-col justify-center">
 
             {/* Small tag badge */}
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-[#c5a880]/20 border border-[#c5a880]/35 text-[#c5a880] text-[10px] sm:text-xs font-semibold tracking-wide sm:tracking-wider uppercase mb-4 sm:mb-6 w-fit">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-[#c5a880]/25 border border-[#c5a880]/40 text-[#c5a880] text-[10px] sm:text-xs font-semibold tracking-wide sm:tracking-wider uppercase mb-4 sm:mb-6 w-fit">
               <Compass className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#c5a880] stroke-[2]" />
               Precision Land Measuring
             </div>
             {/* Headings using Montserrat weights */}
             <h1 className="text-xl sm:text-2xl lg:text-4xl font-semibold text-white tracking-tight leading-[1.12] mb-6">
               Professional Land <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c5a880] via-[#e2cbb1] to-[#8c6d4f] font-bold">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c5a880] via-[#edd9bd] to-[#8c6d4f] font-bold">
                 Surveying Services
               </span>
             </h1>
@@ -364,14 +363,14 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <button
                 onClick={() => setQuoteModalOpen(true)}
-                className="bg-gradient-to-r from-[#8c6d4f] to-[#c5a880] hover:from-[#a18262] hover:to-[#d4b996] text-[#001229] font-semibold px-8 py-3.5 rounded-xl text-sm shadow-lg shadow-[#8c6d4f]/30 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
+                className="bg-gradient-to-r from-[#8c6d4f] to-[#c5a880] hover:from-[#c5a880] hover:to-[#edd9bd] text-[#202B39] font-semibold px-8 py-3.5 rounded-xl text-sm shadow-lg shadow-[#c5a880]/30 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
               >
                 Get Free Quote
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               <a
                 href="#contact"
-                className="flex items-center justify-center px-8 py-3.5 rounded-xl border border-[#c5a880]/30 hover:border-[#c5a880]/50 bg-black/20 hover:bg-black/45 text-slate-200 hover:text-white text-sm font-semibold transition-all duration-300 backdrop-blur-sm"
+                className="flex items-center justify-center px-8 py-3.5 rounded-xl border border-[#c5a880]/35 hover:border-[#c5a880]/60 bg-black/20 hover:bg-black/40 text-slate-200 hover:text-white text-sm font-semibold transition-all duration-300 backdrop-blur-sm"
               >
                 Contact Us
               </a>
@@ -384,7 +383,7 @@ export default function Home() {
                   <Phone className="w-4.5 h-4.5" />
                 </div>
                 <div>
-                  <span className="block text-[7px] uppercase font-mono tracking-widest text-slate-400">Direct Call</span>
+                  <span className="block text-[7px] uppercase font-mono tracking-widest text-slate-300">Direct Call</span>
                   <a href="tel:+919633356603" className="font-semibold text-[#c5a880] text-sm hover:underline">
                     +91 96333 56603
                   </a>
@@ -399,59 +398,59 @@ export default function Home() {
       </section>
 
       {/* ══════════════════ ABOUT ══════════════════ */}
-      <section id="about" className="py-28 relative" style={{ background: "linear-gradient(180deg, #c5a880 0%, #001d3d 70%)" }} >
+      <section id="about" className="py-28 relative bg-[#FAF8F2] border-b border-[#8c6d4f]/20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
             {/* Image Column */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border border-[#c5a880]/20 shadow-2xl aspect-[4/3] lg:aspect-[4/5] glow-gold">
+              <div className="relative rounded-2xl overflow-hidden border border-[#c5a880]/25 shadow-2xl aspect-[4/3] lg:aspect-[4/5] glow-gold">
                 <Image
                   src="/survey_contour.png"
                   alt="3D Contour Mapping Visualization"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#001229]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
               </div>
-              <div className="absolute -bottom-6 -right-6 glass-premium p-5 rounded-xl border border-[#c5a880]/25 max-w-[200px]">
+              <div className="absolute -bottom-6 -right-6 bg-white p-5 rounded-xl border border-[#c5a880]/40 shadow-xl max-w-[200px]">
                 <span className="block text-3xl font-extrabold text-[#c5a880] mb-1">100%</span>
-                <span className="block text-xs font-semibold text-slate-300">Accuracy &amp; Boundary Verification Guarantee</span>
+                <span className="block text-xs font-semibold text-[#202B39]">Accuracy &amp; Boundary Verification Guarantee</span>
               </div>
             </div>
 
             {/* Text Column */}
             <div className="lg:col-span-7">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#c5a880]">Who We Are</span>
-              <h2 className="text-2xl sm:text-3xl font-semibold text-white mt-2 mb-6 tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-[#202B39] mt-2 mb-6 tracking-tight">
                 Accurate Land Surveying Built On High-Tech Precision
               </h2>
 
-              <p className="text-slate-300 text-md leading-relaxed mb-6">
+              <p className="text-[#202B39]/80 text-md leading-relaxed mb-6">
                 Capture Survey is a professional land measurement, engineering, and geodetic mapping services company operating across Kerala. We provide cutting-edge solutions for real estate boundary markings, civil development, site planning, and public works alignment.
               </p>
 
-              <p className="text-slate-400 text-sm leading-relaxed mb-8">
+              <p className="text-[#202B39]/65 text-sm leading-relaxed mb-8">
                 Our team is committed to assisting architects, private developers, land owners, and government entities with dependable, litigation-free mapping. We combine traditional survey wisdom with advanced DGPS receivers, digital total stations, and mapping software.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                <div className="flex items-start gap-3 p-4 rounded-xl bg-[#003566]/30 border border-[#c5a880]/12">
-                  <div className="w-9 h-9 rounded-lg bg-[#c5a880]/10 flex items-center justify-center text-[#c5a880] shrink-0 mt-0.5">
+                <div className="flex items-start gap-3 p-4 rounded-xl bg-white border border-[#c5a880]/30 shadow-sm">
+                  <div className="w-9 h-9 rounded-lg bg-[#c5a880]/20 flex items-center justify-center text-[#c5a880] shrink-0 mt-0.5">
                     <Award className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-200 text-sm">Revenue Mapping Expertise</h4>
-                    <p className="text-xs text-slate-400 mt-0.5">Accurate correlation of field limits with revenue and FMB documents.</p>
+                    <h4 className="font-bold text-[#202B39] text-sm">Revenue Mapping Expertise</h4>
+                    <p className="text-xs text-[#202B39]/60 mt-0.5">Accurate correlation of field limits with revenue and FMB documents.</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3 p-4 rounded-xl bg-[#003566]/30 border border-[#c5a880]/12">
-                  <div className="w-9 h-9 rounded-lg bg-[#c5a880]/10 flex items-center justify-center text-[#c5a880] shrink-0 mt-0.5">
+                <div className="flex items-start gap-3 p-4 rounded-xl bg-white border border-[#c5a880]/30 shadow-sm">
+                  <div className="w-9 h-9 rounded-lg bg-[#c5a880]/20 flex items-center justify-center text-[#c5a880] shrink-0 mt-0.5">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-200 text-sm">Advanced DGPS Receivers</h4>
-                    <p className="text-xs text-slate-400 mt-0.5">Real-time Kinematic (RTK) coordinates with low margins of error.</p>
+                    <h4 className="font-bold text-[#202B39] text-sm">Advanced DGPS Receivers</h4>
+                    <p className="text-xs text-[#202B39]/60 mt-0.5">Real-time Kinematic (RTK) coordinates with low margins of error.</p>
                   </div>
                 </div>
               </div>
@@ -464,51 +463,54 @@ export default function Home() {
       </section>
 
       {/* ══════════════════ SERVICES ══════════════════ */}
-      <section id="services" className="py-28 relative" style={{ background: "linear-gradient(110deg, #c5a880 0%, #001d3d 40%)" }}>
+      <section id="services" className="py-28 relative bg-[#FAF8F2] border-b border-[#8c6d4f]/20">
         <div className="max-w-7xl mx-auto px-6">
 
           {/* Header */}
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs font-semibold uppercase tracking-widest text-[#c5a880]">Our Capabilities</span>
-            <h2 className="text-xl sm:text-3xl font-semibold text-white mt-2 mb-4 tracking-tight">
+            <h2 className="text-xl sm:text-3xl font-semibold text-[#202B39] mt-2 mb-4 tracking-tight">
               Comprehensive Land Survey Solutions
             </h2>
-            <p className="text-slate-400 font-medium text-sm md:text-base">
+            <p className="text-[#202B39]/65 font-medium text-sm md:text-base">
               We offer standard-setting measurements and certified outputs for construction, zoning, mapping, and boundary validations.
             </p>
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {services.map((service, index) => {
               const IconComponent = service.icon;
+
               return (
                 <div
                   key={index}
-                  className="glass-card rounded-2xl p-6 flex flex-col justify-between group relative overflow-hidden transition-all duration-300 hover:border-[#c5a880]/35"
+                  className="rounded-2xl p-4 sm:p-6 flex flex-col justify-between relative overflow-hidden border border-[#c5a880]/30 bg-white shadow-lg transition-all duration-300 hover:shadow-xl"
                 >
-                  {/* Top border reveal */}
-                  <div className="absolute top-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#8c6d4f] to-[#c5a880] group-hover:w-full transition-all duration-400 rounded-t-2xl" />
+                  {/* Gold top border */}
+                  <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#8c6d4f] to-[#c5a880] rounded-t-2xl" />
 
-                  <div className="mb-6">
-                    {/* Gold Circular Icon */}
-                    <div className="w-12 h-12 rounded-full border border-[#c5a880]/30 bg-[#c5a880]/5 flex items-center justify-center text-[#c5a880] mb-5 transition-all duration-300 group-hover:bg-gradient-to-tr group-hover:from-[#8c6d4f] group-hover:to-[#c5a880] group-hover:text-[#001229] group-hover:scale-110 shadow-lg group-hover:shadow-[#c5a880]/15">
-                      <IconComponent className="w-5 h-5 stroke-[2]" />
+                  <div className="mb-4 sm:mb-6">
+                    {/* Gold Icon */}
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-tr from-[#8c6d4f] to-[#c5a880] flex items-center justify-center text-[#202B39] mb-4 sm:mb-5 shadow-lg shadow-[#c5a880]/20">
+                      <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2]" />
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-[#c5a880] transition-colors">
+
+                    <h3 className="text-sm sm:text-lg font-semibold text-[#202B39] mb-2 sm:mb-3 leading-tight">
                       {service.title}
                     </h3>
-                    <p className="text-slate-400 text-xs leading-relaxed font-light">
+
+                    <p className="text-[11px] sm:text-xs text-[#202B39]/70 leading-relaxed font-light">
                       {service.description}
                     </p>
                   </div>
 
-                  <div className="border-t border-[#c5a880]/12 pt-4">
+                  <div className="border-t border-[#c5a880]/20 pt-3 sm:pt-4">
                     <div className="flex flex-wrap gap-1.5">
                       {service.keywords.map((kw, kwIdx) => (
                         <span
                           key={kwIdx}
-                          className="text-[9px] font-medium text-[#c5a880] bg-[#c5a880]/5 py-1 px-3 rounded-full border border-[#c5a880]/15"
+                          className="text-[8px] sm:text-[9px] font-medium text-[#202B39] bg-[#c5a880]/15 py-1 px-2 sm:px-3 rounded-full border border-[#c5a880]/25"
                         >
                           {kw}
                         </span>
@@ -524,14 +526,14 @@ export default function Home() {
       </section>
 
       {/* ══════════════════ CONTACT ══════════════════ */}
-      <section id="contact" className="py-28 relative" style={{ background: "linear-gradient(120deg, #c5a880 0%, #001d3d 60%)" }}>
+      <section id="contact" className="py-28 relative bg-[#FAF8F2] border-b border-[#8c6d4f]/20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
 
             {/* Info Column */}
             <div className="lg:col-span-5">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-white">Get In Touch</span>
-              <h2 className="text-xl sm:text-2xl font-semibold text-white mt-2 mb-6 tracking-tight">
+              <span className="text-xs font-extrabold uppercase tracking-widest text-[#c5a880]">Get In Touch</span>
+              <h2 className="text-xl sm:text-2xl font-semibold text-[#202B39] mt-2 mb-6 tracking-tight">
                 Start Your Project Survey Today
               </h2>
 
@@ -539,29 +541,29 @@ export default function Home() {
               <div className="flex flex-col gap-5">
 
                 {/* Phone card */}
-                <div className="p-6 rounded-2xl bg-[#003566]/40 border border-[#c5a880]/20 glow-gold">
+                <div className="p-6 rounded-2xl bg-white border border-[#c5a880]/35 shadow-md">
                   <span className="text-xs uppercase tracking-widest text-[#c5a880] block mb-4 font-semibold">
                     Direct Contact Lines
                   </span>
                   <div className="flex flex-col gap-4">
                     <div className="flex items-center gap-4">
-                      <div className="w-11 h-11 rounded-xl bg-[#c5a880]/10 flex items-center justify-center text-[#c5a880] shrink-0">
+                      <div className="w-11 h-11 rounded-xl bg-[#c5a880]/15 flex items-center justify-center text-[#c5a880] shrink-0">
                         <Phone className="w-5 h-5 animate-pulse" />
                       </div>
                       <div>
-                        <span className="block text-[10px] text-slate-400 uppercase tracking-widest ">Mobile (WhatsApp)</span>
-                        <a href="tel:+919633356603" className="font-extrabold text-xl text-[#c5a880] hover:underline">
+                        <span className="block text-[10px] text-[#202B39]/50 uppercase tracking-widest">Mobile (WhatsApp)</span>
+                        <a href="tel:+919633356603" className="font-extrabold text-xl text-[#202B39] hover:text-[#c5a880] transition-colors">
                           +91 96333 56603
                         </a>
                       </div>
                     </div>
-                    <div className="flex items-center gap-4 pt-3 border-t border-[#003566]">
-                      <div className="w-11 h-11 rounded-xl bg-[#003566]/60 flex items-center justify-center text-slate-300 shrink-0">
+                    <div className="flex items-center gap-4 pt-3 border-t border-[#c5a880]/20">
+                      <div className="w-11 h-11 rounded-xl bg-[#FAF8F2] flex items-center justify-center text-[#202B39]/60 shrink-0">
                         <Phone className="w-5 h-5" />
                       </div>
                       <div>
-                        <span className="block text-[10px] text-slate-400 uppercase tracking-widest ">Alternative</span>
-                        <a href="tel:+918606401674" className="font-bold text-lg text-slate-200 hover:text-white hover:underline">
+                        <span className="block text-[10px] text-[#202B39]/50 uppercase tracking-widest">Alternative</span>
+                        <a href="tel:+918606401674" className="font-bold text-lg text-[#202B39] hover:text-[#c5a880] transition-colors">
                           +91 86064 01674
                         </a>
                       </div>
@@ -570,26 +572,26 @@ export default function Home() {
                 </div>
 
                 {/* Email */}
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-[#003566]/25 border border-[#003566]/60 hover:border-[#c5a880]/25 transition-colors">
-                  <div className="w-11 h-11 rounded-lg bg-[#003566]/60 border border-[#c5a880]/15 flex items-center justify-center text-slate-300 shrink-0">
+                <div className="flex items-center gap-4 p-4 rounded-xl bg-white border border-[#c5a880]/30 shadow-sm hover:border-[#c5a880]/55 transition-colors">
+                  <div className="w-11 h-11 rounded-lg bg-[#c5a880]/15 flex items-center justify-center text-[#c5a880] shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="block text-[10px] text-slate-400 uppercase">Send Email</span>
-                    <a href="mailto:capturesurvy@gmail.com" className="font-semibold text-slate-200 hover:text-[#c5a880] transition-colors">
+                    <span className="block text-[10px] text-[#202B39]/50 uppercase">Send Email</span>
+                    <a href="mailto:capturesurvy@gmail.com" className="font-semibold text-[#202B39] hover:text-[#c5a880] transition-colors">
                       capturesurvy@gmail.com
                     </a>
                   </div>
                 </div>
 
                 {/* Address */}
-                <div className="flex items-start gap-4 p-4 rounded-xl bg-[#003566]/25 border border-[#003566]/60 hover:border-[#c5a880]/25 transition-colors">
-                  <div className="w-11 h-11 rounded-lg bg-[#003566]/60 border border-[#c5a880]/15 flex items-center justify-center text-slate-300 shrink-0 mt-1">
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-[#c5a880]/30 shadow-sm hover:border-[#c5a880]/55 transition-colors">
+                  <div className="w-11 h-11 rounded-lg bg-[#c5a880]/15 flex items-center justify-center text-[#c5a880] shrink-0 mt-1">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="block text-[10px] text-slate-400 uppercase ">Head Office</span>
-                    <p className="text-slate-300 text-sm leading-relaxed mt-0.5">
+                    <span className="block text-[10px] text-[#202B39]/50 uppercase">Head Office</span>
+                    <p className="text-[#202B39]/80 text-sm leading-relaxed mt-0.5">
                       403/9 Aryambavu Kottopadam Road,<br />
                       Near Milma Society, Ariyoor (PO),<br />
                       678583 Aryambavu, Kerala, India
@@ -610,11 +612,11 @@ export default function Home() {
               </div>
 
               {/* Map embed — full height, no dark filter */}
-              <div className="relative flex-1 rounded-2xl overflow-hidden border-2 border-[#003566] shadow-2xl shadow-[#001229]/60 min-h-[420px] lg:min-h-0 lg:h-full">
+              <div className="relative flex-1 rounded-2xl overflow-hidden border-2 border-[#c5a880]/30 shadow-2xl shadow-[#202B39]/20 min-h-[420px] lg:min-h-0 lg:h-full">
                 {/* Decorative top badge */}
-                <div className="absolute top-4 left-4 z-10 bg-[#001229]/90 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-[#c5a880]/20 flex items-center gap-2">
+                <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-[#c5a880]/25 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                  <span className="text-[10px] font-mono text-slate-300 uppercase tracking-wider">Live Map</span>
+                  <span className="text-[10px] font-mono text-[#202B39] uppercase tracking-wider">Live Map</span>
                 </div>
                 <iframe
                   title="Capture Survey Office Location"
@@ -631,7 +633,7 @@ export default function Home() {
                 href="https://maps.google.com/?q=Aryambavu+Kottopadam+Road+Kerala+India"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 flex items-center justify-center gap-2 py-3 px-6 rounded-xl border border-[#c5a880]/25 hover:border-[#c5a880]/50 bg-[#003566]/30 hover:bg-[#003566]/55 text-slate-300 hover:text-[#c5a880] text-sm font-semibold transition-all duration-300"
+                className="mt-4 flex items-center justify-center gap-2 py-3 px-6 rounded-xl border border-[#c5a880]/40 hover:border-[#c5a880] bg-white hover:bg-[#FAF8F2] text-[#202B39] hover:text-[#c5a880] text-sm font-semibold transition-all duration-300 shadow-sm"
               >
                 <MapPin className="w-4 h-4" />
                 Open in Google Maps
@@ -643,10 +645,10 @@ export default function Home() {
       </section>
 
       {/* ══════════════════ FOOTER ══════════════════ */}
-      <footer className="relative bg-gradient-to-r from-[#8c6d4f] via-[#c5a880] to-[#8c6d4f] text-[#001229] border-t border-[#001229]/15 footer-glow-shadow">
+      <footer className="relative bg-[#202B39] text-slate-300 border-t border-[#c5a880]/30 shadow-2xl">
 
-        {/* Subtle dark top divider flare */}
-        <div className="absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r from-transparent via-[#001229]/25 to-transparent" />
+        {/* Gold top divider */}
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#c5a880] to-transparent" />
 
         {/* Main footer grid */}
         <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -654,19 +656,19 @@ export default function Home() {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <a href="#home" className="flex items-center gap-3 mb-4 group w-fit">
-              <div className="w-8 h-8 rounded-lg bg-[#001229] flex items-center justify-center shadow-lg">
+              <div className="w-8 h-8 rounded-lg bg-white/5 border border-[#c5a880]/20 flex items-center justify-center shadow-lg">
                 <Compass className="w-5 h-5 text-[#c5a880] stroke-[2]" />
               </div>
               <div>
-                <span className="text-sm font-bold tracking-tight text-[#001229]">
+                <span className="text-sm font-bold tracking-tight text-white">
                   CAPTURE SURVEY
                 </span>
-                <span className="block text-[8px] text-[#001229]/70 font-mono tracking-widest leading-none font-bold">
+                <span className="block text-[8px] text-slate-400 font-mono tracking-widest leading-none font-bold">
                   PRECISION LAND MEASURING
                 </span>
               </div>
             </a>
-            <p className="text-[#001229]/80 text-xs leading-relaxed mb-4 font-normal">
+            <p className="text-slate-400 text-xs leading-relaxed mb-4 font-normal">
               Professional DGPS &amp; land surveying services across Kerala. Accurate, certified, and reliable mapping for every need.
             </p>
             {/* Social icons */}
@@ -679,7 +681,7 @@ export default function Home() {
                 <a
                   key={i}
                   href={href}
-                  className="w-8 h-8 rounded-lg bg-[#001229]/10 border border-[#001229]/15 hover:bg-[#001229] hover:text-white flex items-center justify-center text-[#001229] transition-all duration-200"
+                  className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 hover:bg-[#c5a880] hover:text-[#202B39] flex items-center justify-center text-slate-300 transition-all duration-200"
                 >
                   <Icon className="w-3.5 h-3.5" />
                 </a>
@@ -689,8 +691,8 @@ export default function Home() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xs font-bold text-[#001229] uppercase tracking-wider mb-4 flex items-center gap-2">
-              <span className="w-3 h-0.5 bg-[#001229] rounded-full inline-block" />
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 flex items-center gap-2">
+              <span className="w-3 h-0.5 bg-[#c5a880] rounded-full inline-block" />
               Quick Links
             </h4>
             <ul className="flex flex-col gap-2">
@@ -705,9 +707,9 @@ export default function Home() {
                   <a
                     href={href}
                     onClick={action}
-                    className="flex items-center gap-1.5 text-[#001229]/80 hover:text-[#001229] text-xs transition-colors group font-medium"
+                    className="flex items-center gap-1.5 text-slate-300 hover:text-white text-xs transition-colors group font-medium"
                   >
-                    <ChevronRight className="w-3 h-3 text-[#001229]/40 group-hover:text-[#001229] transition-colors" />
+                    <ChevronRight className="w-3 h-3 text-slate-500 group-hover:text-[#c5a880] transition-colors" />
                     {label}
                   </a>
                 </li>
@@ -717,8 +719,8 @@ export default function Home() {
 
           {/* Services */}
           <div>
-            <h4 className="text-xs font-bold text-[#001229] uppercase tracking-wider mb-4 flex items-center gap-2">
-              <span className="w-3 h-0.5 bg-[#001229] rounded-full inline-block" />
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 flex items-center gap-2">
+              <span className="w-3 h-0.5 bg-[#c5a880] rounded-full inline-block" />
               Our Services
             </h4>
             <ul className="flex flex-col gap-2">
@@ -726,9 +728,9 @@ export default function Home() {
                 <li key={svc}>
                   <a
                     href="#services"
-                    className="flex items-center gap-1.5 text-[#001229]/80 hover:text-[#001229] text-xs transition-colors group font-medium"
+                    className="flex items-center gap-1.5 text-slate-300 hover:text-white text-xs transition-colors group font-medium"
                   >
-                    <ChevronRight className="w-3 h-3 text-[#001229]/40 group-hover:text-[#001229] transition-colors" />
+                    <ChevronRight className="w-3 h-3 text-slate-500 group-hover:text-[#c5a880] transition-colors" />
                     {svc}
                   </a>
                 </li>
@@ -738,57 +740,57 @@ export default function Home() {
 
           {/* Contact details */}
           <div>
-            <h4 className="text-xs font-bold text-[#001229] uppercase tracking-wider mb-4 flex items-center gap-2">
-              <span className="w-3 h-0.5 bg-[#001229] rounded-full inline-block" />
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 flex items-center gap-2">
+              <span className="w-3 h-0.5 bg-[#c5a880] rounded-full inline-block" />
               Contact Info
             </h4>
             <ul className="flex flex-col gap-4">
               <li>
                 <a href="tel:+919633356603" className="flex items-start gap-2.5 group">
-                  <div className="w-8 h-8 rounded-lg bg-[#001229]/10 border border-[#001229]/15 flex items-center justify-center text-[#001229] shrink-0 mt-0.5 group-hover:bg-[#001229] group-hover:text-white transition-all">
+                  <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 shrink-0 mt-0.5 group-hover:bg-[#c5a880] group-hover:text-[#202B39] transition-all">
                     <Phone className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <span className="block text-[8px] text-[#001229]/60 uppercase font-mono tracking-wider font-bold">Primary Phone</span>
-                    <span className="text-[#001229] font-bold text-xs transition-colors">
+                    <span className="block text-[8px] text-slate-400 uppercase font-mono tracking-wider font-bold">Primary Phone</span>
+                    <span className="text-white font-bold text-xs transition-colors">
                       +91 96333 56603
                     </span>
-                    <span className="block text-[#001229]/80 text-[10px]">+91 86064 01674</span>
+                    <span className="block text-slate-400 text-[10px]">+91 86064 01674</span>
                   </div>
                 </a>
               </li>
               <li>
                 <a href="mailto:capturesurvy@gmail.com" className="flex items-start gap-2.5 group">
-                  <div className="w-8 h-8 rounded-lg bg-[#001229]/10 border border-[#001229]/15 flex items-center justify-center text-[#001229] shrink-0 mt-0.5 group-hover:bg-[#001229] group-hover:text-white transition-all">
+                  <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 shrink-0 mt-0.5 group-hover:bg-[#c5a880] group-hover:text-[#202B39] transition-all">
                     <Mail className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <span className="block text-[8px] text-[#001229]/60 uppercase font-mono tracking-wider font-bold">Email</span>
-                    <span className="text-[#001229] text-xs font-semibold break-all">
+                    <span className="block text-[8px] text-slate-400 uppercase font-mono tracking-wider font-bold">Email</span>
+                    <span className="text-white text-xs font-semibold break-all hover:text-[#c5a880]">
                       capturesurvy@gmail.com
                     </span>
                   </div>
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-[#001229]/10 border border-[#001229]/15 flex items-center justify-center text-[#001229] shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 shrink-0 mt-0.5">
                   <MapPin className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <span className="block text-[8px] text-[#001229]/60 uppercase font-mono tracking-wider font-bold">Office Address</span>
-                  <p className="text-[#001229]/80 text-[10px] leading-normal mt-0.5 font-medium">
+                  <span className="block text-[8px] text-slate-400 uppercase font-mono tracking-wider font-bold">Office Address</span>
+                  <p className="text-slate-300 text-[10px] leading-normal mt-0.5 font-medium">
                     403/9 Aryambavu Kottopadam Rd,<br />
                     Ariyoor (PO), 678583, Palakkad
                   </p>
                 </div>
               </li>
               <li className="flex items-start gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-[#001229]/10 border border-[#001229]/15 flex items-center justify-center text-[#001229] shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 shrink-0 mt-0.5">
                   <Clock className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <span className="block text-[8px] text-[#001229]/60 uppercase font-mono tracking-wider font-bold">Working Hours</span>
-                  <p className="text-[#001229]/80 text-[10px] leading-normal mt-0.5 font-medium">
+                  <span className="block text-[8px] text-slate-400 uppercase font-mono tracking-wider font-bold">Working Hours</span>
+                  <p className="text-slate-300 text-[10px] leading-normal mt-0.5 font-medium">
                     Mon – Sat: 9:00 AM – 6:00 PM
                   </p>
                 </div>
@@ -799,12 +801,12 @@ export default function Home() {
         </div>
 
         {/* Footer bottom bar */}
-        <div className="border-t border-[#001229]/10" />
-        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] font-mono text-[#001229]/75 font-semibold">
-          <p>&copy; {new Date().getFullYear()} Capture Survey. All rights reserved.</p>
+        <div className="border-t border-white/10" />
+        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] font-mono text-slate-400 font-semibold">
+          <p>&copy; ${new Date().getFullYear()} Capture Survey. All rights reserved.</p>
           <p>Precision Land Surveyors &mdash; Palakkad, Kerala</p>
-          <div className="flex items-center gap-1.5 text-emerald-950 font-bold">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-900 animate-pulse" />
+          <div className="flex items-center gap-1.5 text-[#c5a880] font-bold">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#c5a880] animate-pulse" />
             <span>Active Support</span>
           </div>
         </div>
@@ -815,10 +817,10 @@ export default function Home() {
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
           <div
             onClick={() => setQuoteModalOpen(false)}
-            className="absolute inset-0 bg-[#000c1a]/85 backdrop-blur-sm"
+            className="absolute inset-0 bg-[#202B39]/70 backdrop-blur-sm"
           />
 
-          <div className="relative glass-premium w-full max-w-xl rounded-2xl border border-[#c5a880]/20 p-8 shadow-2xl animate-scale-up z-10">
+          <div className="relative glass-premium w-full max-w-xl rounded-2xl border border-[#c5a880]/25 p-8 shadow-2xl animate-scale-up z-10">
             <button
               onClick={() => setQuoteModalOpen(false)}
               className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors"
@@ -904,7 +906,7 @@ export default function Home() {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-[#8c6d4f] to-[#c5a880] hover:from-[#a18262] hover:to-[#d4b996] text-[#001229] font-bold py-3 rounded-xl text-sm transition-all shadow-lg"
+                className="w-full bg-gradient-to-r from-[#8c6d4f] to-[#c5a880] hover:from-[#c5a880] hover:to-[#edd9bd] text-[#202B39] font-bold py-3 rounded-xl text-sm transition-all shadow-lg"
               >
                 {formSubmitted ? "Opening WhatsApp Chat..." : "Request Proposal via WhatsApp"}
               </button>
