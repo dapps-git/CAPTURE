@@ -30,6 +30,23 @@ import {
   Quote,
 } from "lucide-react";
 
+const Instagram = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={props.className}
+  >
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
+
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -691,7 +708,7 @@ export default function Home() {
                     <p className="text-[#202B39]/80 text-sm leading-relaxed mt-0.5">
                       403/9 Aryambavu Kottopadam Road,<br />
                       Near Milma Society, Ariyoor (PO),<br />
-                      678583 Aryambavu, Kerala, India
+                      Mannarkkad, Kerala 678583
                     </p>
                   </div>
                 </div>
@@ -742,7 +759,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════ FOOTER ══════════════════ */}
-      <footer className="relative bg-white text-[#8c6d4f] border-t border-[#c5a880]/30 shadow-2xl">
+      <footer className="relative bg-[#EFE9D7] text-[#8c6d4f] border-t border-[#c5a880]/30 shadow-2xl">
         {/* Gold top divider */}
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#c5a880] to-transparent" />
 
@@ -752,7 +769,7 @@ export default function Home() {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <a href="#home" className="flex items-center gap-3 mb-4 group w-fit">
-              <div className="w-8 h-8 rounded-lg bg-white/5 border border-[#c5a880]/20 flex items-center justify-center shadow-lg">
+              <div className="w-8 h-8 rounded-lg bg-[#FAF8F2] border border-[#c5a880]/20 flex items-center justify-center shadow-lg">
                 <Compass className="w-5 h-5 text-[#c5a880] stroke-[2]" />
               </div>
               <div>
@@ -770,14 +787,16 @@ export default function Home() {
             {/* Social icons */}
             <div className="flex gap-2.5">
               {[
-                { Icon: Globe, href: "#" },
-                { Icon: Share2, href: "#" },
-                { Icon: MessageCircle, href: "#" },
+                { Icon: Instagram, href: "https://www.instagram.com/capture_survey?igsh=NHhrNnRubjlhd2Rm" },
+                { Icon: MessageCircle, href: "https://wa.me/919633356603" },
+                { Icon: Mail, href: "mailto:capturesurvy@gmail.com" },
               ].map(({ Icon, href }, i) => (
                 <a
                   key={i}
                   href={href}
-                  className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 hover:bg-[#c5a880] hover:text-[#202B39] flex items-center justify-center text-[#8c6d4f] transition-all duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 rounded-lg bg-[#FAF8F2] border border-[#c5a880]/20 hover:bg-[#c5a880] hover:text-[#202B39] flex items-center justify-center text-[#8c6d4f] transition-all duration-200"
                 >
                   <Icon className="w-3.5 h-3.5" />
                 </a>
@@ -843,7 +862,7 @@ export default function Home() {
             <ul className="flex flex-col gap-4">
               <li>
                 <a href="tel:+919633356603" className="flex items-start gap-2.5 group">
-                  <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 shrink-0 mt-0.5 group-hover:bg-[#c5a880] group-hover:text-[#202B39] transition-all">
+                  <div className="w-8 h-8 rounded-lg bg-[#FAF8F2] border border-[#c5a880]/20 flex items-center justify-center text-[#8c6d4f] shrink-0 mt-0.5 group-hover:bg-[#c5a880] group-hover:text-[#202B39] transition-all">
                     <Phone className="w-3.5 h-3.5" />
                   </div>
                   <div>
@@ -857,7 +876,7 @@ export default function Home() {
               </li>
               <li>
                 <a href="mailto:capturesurvy@gmail.com" className="flex items-start gap-2.5 group">
-                  <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 shrink-0 mt-0.5 group-hover:bg-[#c5a880] group-hover:text-[#202B39] transition-all">
+                  <div className="w-8 h-8 rounded-lg bg-[#FAF8F2] border border-[#c5a880]/20 flex items-center justify-center text-[#8c6d4f] shrink-0 mt-0.5 group-hover:bg-[#c5a880] group-hover:text-[#202B39] transition-all">
                     <Mail className="w-3.5 h-3.5" />
                   </div>
                   <div>
@@ -869,19 +888,19 @@ export default function Home() {
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-lg bg-[#FAF8F2] border border-[#c5a880]/20 flex items-center justify-center text-[#8c6d4f] shrink-0 mt-0.5">
                   <MapPin className="w-3.5 h-3.5" />
                 </div>
                 <div>
                   <span className="block text-[8px] text-[#8c6d4f] uppercase font-mono tracking-wider font-bold">Office Address</span>
                   <p className="text-[#8c6d4f] text-[10px] leading-normal mt-0.5 font-medium">
                     403/9 Aryambavu Kottopadam Rd,<br />
-                    Ariyoor (PO), 678583, Palakkad
+                    Ariyoor (PO), Mannarkkad, Kerala 678583
                   </p>
                 </div>
               </li>
               <li className="flex items-start gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-lg bg-[#FAF8F2] border border-[#c5a880]/20 flex items-center justify-center text-[#8c6d4f] shrink-0 mt-0.5">
                   <Clock className="w-3.5 h-3.5" />
                 </div>
                 <div>
@@ -897,10 +916,10 @@ export default function Home() {
         </div>
 
         {/* Footer bottom bar */}
-        <div className="border-t border-white/10" />
+        <div className="border-t border-[#c5a880]/15" />
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] font-mono text-[#8c6d4f] font-semibold">
-          <p>&copy; ${new Date().getFullYear()} Capture Survey. All rights reserved.</p>
-          <p>Precision Land Surveyors &mdash; Palakkad, Kerala</p>
+          <p>&copy; {new Date().getFullYear()} Capture Survey. All rights reserved.</p>
+          <p>Precision Land Surveyors &mdash; Mannarkkad, Palakkad, Kerala</p>
           <div className="flex items-center gap-1.5 text-[#c5a880] font-bold">
             <span className="w-1.5 h-1.5 rounded-full bg-[#c5a880] animate-pulse" />
             <span>Active Support</span>
