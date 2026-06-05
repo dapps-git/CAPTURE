@@ -26,6 +26,8 @@ import {
   Globe,
   Share2,
   MessageCircle,
+  Star,
+  Quote,
 } from "lucide-react";
 
 export default function Home() {
@@ -202,7 +204,7 @@ export default function Home() {
       {/* ══════════════════ HEADER ══════════════════ */}
       <header
         className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ${scrolled
-          ? "bg-[#202B39]/95 backdrop-blur-md shadow-2xl border-b border-[#c5a880]/25"
+          ? "bg-white/95 backdrop-blur-md shadow-2xl border-b border-[#c5a880]/25"
           : "bg-transparent backdrop-blur-md border-b border-white/5"
           }`}
       >        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -213,8 +215,13 @@ export default function Home() {
               <Compass className="w-6 h-6 text-[#202B39] stroke-[2.5]" />
             </div>
             <div>
-
-
+              <span className={`text-sm font-bold tracking-tight transition-colors block ${scrolled ? "text-[#202B39] group-hover:text-[#c5a880]" : "text-white group-hover:text-[#c5a880]"
+                }`}>
+                CAPTURE SURVEY
+              </span>
+              <span className="block text-[6px] text-[#c5a880] font-mono tracking-widest leading-none ">
+                PRECISION LAND MEASURING
+              </span>
             </div>
           </a>
 
@@ -226,9 +233,8 @@ export default function Home() {
                 href={`#${section}`}
                 className={`text-sm font-medium tracking-wide capitalize transition-all duration-200 relative py-1 ${activeSection === section
                   ? "text-[#c5a880] font-semibold"
-                  : "text-slate-200 hover:text-white"
-                  }`}
-              >
+                  : "text-[#c5a880] hover:text-[#d8bc98]"
+                  }`}>
                 {section === "contact" ? "Contact Us" : section}
                 {activeSection === section && (
                   <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#8c6d4f] to-[#c5a880] rounded-full" />
@@ -245,10 +251,13 @@ export default function Home() {
                 <a href="tel:+919633356603" className="hover:underline hover:text-white transition-colors">
                   +91 96333 56603
                 </a>
+                <a href="tel:+919633356603" className="hover:underline hover:text-white transition-colors">
+                  +91 86064 01674
+                </a>
               </div>
-              <a href="tel:+918606401674" className="text-slate-300 font-mono text-xs hover:text-white transition-colors">
-                +91 86064 01674
-              </a>
+
+
+
             </div>
 
             <button
@@ -347,12 +356,13 @@ export default function Home() {
               Precision Land Measuring
             </div>
             {/* Headings using Montserrat weights */}
-            <h1 className="text-xl sm:text-2xl lg:text-4xl font-semibold text-white tracking-tight leading-[1.12] mb-6">
-              Professional Land <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c5a880] via-[#edd9bd] to-[#8c6d4f] font-bold">
-                Surveying Services
-              </span>
-            </h1>
+            <h2 className="text-xl sm:text-xl lg:text-3xl font-semibold text-white tracking-tight leading-[1.12] mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c5a880] via-[#edd9bd] to-[#8c6d4f] ">
+                Capture Survey
+              </span><br></br>
+              Professional Land Surveying <br className="hidden sm:block" />
+
+            </h2>
 
 
             <p className="text-slate-300 text-sm md:text-base mb-8 leading-relaxed font-light">
@@ -376,8 +386,8 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Phone badge */}
-            <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            {/* Rating + phone row */}
+            <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center gap-4 flex-wrap">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-lg bg-[#c5a880]/15 flex items-center justify-center text-[#c5a880]">
                   <Phone className="w-4.5 h-4.5" />
@@ -390,6 +400,7 @@ export default function Home() {
                 </div>
               </div>
               <span className="hidden sm:inline text-white/20">|</span>
+              {/* Star rating badge */}
 
             </div>
 
@@ -525,6 +536,92 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ══════════════════ TESTIMONIALS ══════════════════ */}
+      <section className="py-28 relative bg-[#FAF8F2] border-b border-[#8c6d4f]/20 overflow-hidden">
+        {/* Subtle background pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.06] pointer-events-none"
+          style={{ backgroundImage: "radial-gradient(#c5a880 1px, transparent 1px)", backgroundSize: "28px 28px" }}
+        />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          {/* Header */}
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#c5a880]">Client Feedback</span>
+            <h2 className="text-xl sm:text-3xl font-semibold text-[#202B39] mt-2 mb-4 tracking-tight">
+              What Our Clients Say
+            </h2>
+            <p className="text-[#202B39]/60 font-light text-sm md:text-base">
+              Trusted by landowners, architects, and developers across Kerala for reliable, precision-first survey work.
+            </p>
+          </div>
+
+          {/* Reviews grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                name: "Rajesh Kumar",
+                location: "Palakkad",
+                service: "DGPS Survey",
+                rating: 5,
+                comment: "Outstanding precision! Capture Survey completed our boundary demarcation with pinpoint accuracy. The team was professional and delivered the certified report on time. Highly recommended.",
+              },
+              {
+                name: "Sreelatha Menon",
+                location: "Thrissur",
+                service: "Contour Survey",
+                rating: 5,
+                comment: "Exceptional work on our site's contour mapping. The detailed elevation data they provided saved us significantly in earthwork planning. True professionals.",
+              },
+              {
+                name: "Arun Nair",
+                location: "Kozhikode",
+                service: "Building Setout",
+                rating: 5,
+                comment: "We hired Capture Survey for our villa project setout. Their column grid marking and pile point accuracy was flawless. The construction proceeded without a single alignment issue.",
+              },
+            ].map((review, i) => (
+              <div key={i} className="bg-white border border-[#c5a880]/30 hover:border-[#c5a880]/60 rounded-2xl p-6 flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#c5a880]/10">
+                {/* Stars */}
+                <div className="flex items-center gap-1">
+                  {Array.from({ length: review.rating }).map((_, si) => (
+                    <Star key={si} className="w-4 h-4 fill-[#c5a880] text-[#c5a880]" />
+                  ))}
+                </div>
+                {/* Quote */}
+                <div className="relative">
+                  <Quote className="w-6 h-6 text-[#c5a880]/25 absolute -top-1 -left-1" />
+                  <p className="text-[#202B39]/70 text-sm leading-relaxed pl-4 font-light">
+                    &ldquo;{review.comment}&rdquo;
+                  </p>
+                </div>
+                {/* Author */}
+                <div className="border-t border-[#c5a880]/20 pt-4 mt-auto flex items-center justify-between gap-2">
+                  <div>
+                    <span className="block text-[#202B39] font-semibold text-sm">{review.name}</span>
+                    <span className="text-[#c5a880] text-xs font-mono">{review.service} &bull; {review.location}</span>
+                  </div>
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#8c6d4f] to-[#c5a880] flex items-center justify-center text-white text-xs font-bold shrink-0 shadow-md">
+                    {review.name.charAt(0)}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA to full feedback page */}
+          <div className="text-center">
+            <a
+              href="/feedback"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#8c6d4f] to-[#c5a880] hover:from-[#c5a880] hover:to-[#edd9bd] text-[#202B39] font-bold px-8 py-3.5 rounded-xl text-sm transition-all duration-300 hover:scale-105 shadow-lg shadow-[#c5a880]/20"
+            >
+              <Star className="w-4 h-4" />
+              View All Reviews &amp; Submit Feedback
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ══════════════════ CONTACT ══════════════════ */}
       <section id="contact" className="py-28 relative bg-[#FAF8F2] border-b border-[#8c6d4f]/20">
         <div className="max-w-7xl mx-auto px-6">
@@ -645,8 +742,7 @@ export default function Home() {
       </section>
 
       {/* ══════════════════ FOOTER ══════════════════ */}
-      <footer className="relative bg-[#202B39] text-slate-300 border-t border-[#c5a880]/30 shadow-2xl">
-
+      <footer className="relative bg-white text-[#8c6d4f] border-t border-[#c5a880]/30 shadow-2xl">
         {/* Gold top divider */}
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#c5a880] to-transparent" />
 
@@ -660,15 +756,15 @@ export default function Home() {
                 <Compass className="w-5 h-5 text-[#c5a880] stroke-[2]" />
               </div>
               <div>
-                <span className="text-sm font-bold tracking-tight text-white">
+                <span className="text-sm font-bold tracking-tight text-[#8c6d4f]">
                   CAPTURE SURVEY
                 </span>
-                <span className="block text-[8px] text-slate-400 font-mono tracking-widest leading-none font-bold">
+                <span className="block text-[8px] text-[#8c6d4f] font-mono tracking-widest leading-none font-bold">
                   PRECISION LAND MEASURING
                 </span>
               </div>
             </a>
-            <p className="text-slate-400 text-xs leading-relaxed mb-4 font-normal">
+            <p className="text-[#8c6d4f] text-xs leading-relaxed mb-4 font-normal">
               Professional DGPS &amp; land surveying services across Kerala. Accurate, certified, and reliable mapping for every need.
             </p>
             {/* Social icons */}
@@ -681,7 +777,7 @@ export default function Home() {
                 <a
                   key={i}
                   href={href}
-                  className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 hover:bg-[#c5a880] hover:text-[#202B39] flex items-center justify-center text-slate-300 transition-all duration-200"
+                  className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 hover:bg-[#c5a880] hover:text-[#202B39] flex items-center justify-center text-[#8c6d4f] transition-all duration-200"
                 >
                   <Icon className="w-3.5 h-3.5" />
                 </a>
@@ -691,11 +787,11 @@ export default function Home() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 flex items-center gap-2">
+            <h4 className="text-xs font-bold text-[#8c6d4f] uppercase tracking-wider mb-4 flex items-center gap-2">
               <span className="w-3 h-0.5 bg-[#c5a880] rounded-full inline-block" />
               Quick Links
             </h4>
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-2 text-[#8c6d4f]">
               {[
                 { label: "Home", href: "#home" },
                 { label: "About Us", href: "#about" },
@@ -707,9 +803,9 @@ export default function Home() {
                   <a
                     href={href}
                     onClick={action}
-                    className="flex items-center gap-1.5 text-slate-300 hover:text-white text-xs transition-colors group font-medium"
+                    className="flex items-center gap-1.5 text-[#8c6d4f] text-xs transition-colors group font-medium"
                   >
-                    <ChevronRight className="w-3 h-3 text-slate-500 group-hover:text-[#c5a880] transition-colors" />
+                    <ChevronRight className="w-3 h-3 text-[#8c6d4f]  transition-colors" />
                     {label}
                   </a>
                 </li>
@@ -719,7 +815,7 @@ export default function Home() {
 
           {/* Services */}
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 flex items-center gap-2">
+            <h4 className="text-xs font-bold text-[#8c6d4f] uppercase tracking-wider mb-4 flex items-center gap-2">
               <span className="w-3 h-0.5 bg-[#c5a880] rounded-full inline-block" />
               Our Services
             </h4>
@@ -728,9 +824,9 @@ export default function Home() {
                 <li key={svc}>
                   <a
                     href="#services"
-                    className="flex items-center gap-1.5 text-slate-300 hover:text-white text-xs transition-colors group font-medium"
+                    className="flex items-center gap-1.5 text-[#8c6d4f]  text-xs transition-colors group font-medium"
                   >
-                    <ChevronRight className="w-3 h-3 text-slate-500 group-hover:text-[#c5a880] transition-colors" />
+                    <ChevronRight className="w-3 h-3 text-[#8c6d4f] text-[#c5a880] transition-colors" />
                     {svc}
                   </a>
                 </li>
@@ -740,7 +836,7 @@ export default function Home() {
 
           {/* Contact details */}
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 flex items-center gap-2">
+            <h4 className="text-xs font-bold text-[#8c6d4f] uppercase tracking-wider mb-4 flex items-center gap-2">
               <span className="w-3 h-0.5 bg-[#c5a880] rounded-full inline-block" />
               Contact Info
             </h4>
@@ -751,11 +847,11 @@ export default function Home() {
                     <Phone className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <span className="block text-[8px] text-slate-400 uppercase font-mono tracking-wider font-bold">Primary Phone</span>
-                    <span className="text-white font-bold text-xs transition-colors">
+                    <span className="block text-[8px] text-[#8c6d4f] uppercase font-mono tracking-wider font-bold">Primary Phone</span>
+                    <span className="text-[#8c6d4f] font-bold text-xs transition-colors">
                       +91 96333 56603
                     </span>
-                    <span className="block text-slate-400 text-[10px]">+91 86064 01674</span>
+                    <span className="block text-[#8c6d4f] text-[10px]">+91 86064 01674</span>
                   </div>
                 </a>
               </li>
@@ -765,8 +861,8 @@ export default function Home() {
                     <Mail className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <span className="block text-[8px] text-slate-400 uppercase font-mono tracking-wider font-bold">Email</span>
-                    <span className="text-white text-xs font-semibold break-all hover:text-[#c5a880]">
+                    <span className="block text-[8px] text-[#8c6d4f] uppercase font-mono tracking-wider font-bold">Email</span>
+                    <span className="text-[#8c6d4f] text-xs font-semibold break-all hover:text-[#c5a880]">
                       capturesurvy@gmail.com
                     </span>
                   </div>
@@ -777,8 +873,8 @@ export default function Home() {
                   <MapPin className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <span className="block text-[8px] text-slate-400 uppercase font-mono tracking-wider font-bold">Office Address</span>
-                  <p className="text-slate-300 text-[10px] leading-normal mt-0.5 font-medium">
+                  <span className="block text-[8px] text-[#8c6d4f] uppercase font-mono tracking-wider font-bold">Office Address</span>
+                  <p className="text-[#8c6d4f] text-[10px] leading-normal mt-0.5 font-medium">
                     403/9 Aryambavu Kottopadam Rd,<br />
                     Ariyoor (PO), 678583, Palakkad
                   </p>
@@ -789,8 +885,8 @@ export default function Home() {
                   <Clock className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <span className="block text-[8px] text-slate-400 uppercase font-mono tracking-wider font-bold">Working Hours</span>
-                  <p className="text-slate-300 text-[10px] leading-normal mt-0.5 font-medium">
+                  <span className="block text-[8px] text-[#8c6d4f] uppercase font-mono tracking-wider font-bold">Working Hours</span>
+                  <p className="text-[#8c6d4f] text-[10px] leading-normal mt-0.5 font-medium">
                     Mon – Sat: 9:00 AM – 6:00 PM
                   </p>
                 </div>
@@ -802,7 +898,7 @@ export default function Home() {
 
         {/* Footer bottom bar */}
         <div className="border-t border-white/10" />
-        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] font-mono text-slate-400 font-semibold">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] font-mono text-[#8c6d4f] font-semibold">
           <p>&copy; ${new Date().getFullYear()} Capture Survey. All rights reserved.</p>
           <p>Precision Land Surveyors &mdash; Palakkad, Kerala</p>
           <div className="flex items-center gap-1.5 text-[#c5a880] font-bold">
@@ -834,12 +930,12 @@ export default function Home() {
                 Survey Quotation Request
               </span>
               <h3 className="text-2xl font-semibold text-white tracking-tight">Get a Free Estimate</h3>
-              <p className="text-slate-400 text-xs mt-1">Provide your project details to receive a customized surveying proposal.</p>
+              <p className="text-[#8c6d4f] text-xs mt-1">Provide your project details to receive a customized surveying proposal.</p>
             </div>
 
             <form onSubmit={handleQuoteSubmit} className="space-y-4">
               <div>
-                <label className="block text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-1.5">Name</label>
+                <label className="block text-[10px] font-mono text-[#8c6d4f] uppercase tracking-wider mb-1.5">Name</label>
                 <input
                   type="text"
                   required
@@ -852,7 +948,7 @@ export default function Home() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-1.5">Phone Number</label>
+                  <label className="block text-[10px] font-mono text-[#8c6d4f] uppercase tracking-wider mb-1.5">Phone Number</label>
                   <input
                     type="tel"
                     required
@@ -863,7 +959,7 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-1.5">Project Location</label>
+                  <label className="block text-[10px] font-mono text-[#8c6d4f] uppercase tracking-wider mb-1.5">Project Location</label>
                   <input
                     type="text"
                     required
@@ -876,7 +972,7 @@ export default function Home() {
               </div>
 
               <div>
-                <label className="block text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-1.5">Survey Category</label>
+                <label className="block text-[10px] font-mono text-[#8c6d4f] uppercase tracking-wider mb-1.5">Survey Category</label>
                 <select
                   value={quoteForm.surveyType}
                   onChange={(e) => setQuoteForm({ ...quoteForm, surveyType: e.target.value })}
@@ -894,7 +990,7 @@ export default function Home() {
               </div>
 
               <div>
-                <label className="block text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-1.5">Project Details</label>
+                <label className="block text-[10px] font-mono text-[#8c6d4f] uppercase tracking-wider mb-1.5">Project Details</label>
                 <textarea
                   rows="3"
                   placeholder="Specify land area in cents/acres, purpose, and special instructions..."

@@ -2,7 +2,7 @@
 
 :root {
   --background: #FAF8F2;
-  --foreground: #202B39;
+  --foreground: #ffffff;
   --cream: #FAF8F2;
   --cream-dark: #EFE9D7;
   --blue-deep: #202B39;
@@ -50,7 +50,7 @@ body {
   background-color: #FAF8F2;
   color: #202B39;
   overflow-x: hidden;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* Footer Gold & Blue Glow Shadow */
